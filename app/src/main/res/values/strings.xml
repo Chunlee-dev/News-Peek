@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">News Peek</string>
+    <string name="reload">Reload</string>
+    <string name="logo">logo</string>
+    <string name="dummy_article_title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="action_image">action_image</string>
+    <string name="author">author</string>
+    <string name="dummy_author">Shunanigan</string>
+    <string name="separator">separator</string>
+    <string name="mark_as_fav">mark as favourite</string>
+</resources>
