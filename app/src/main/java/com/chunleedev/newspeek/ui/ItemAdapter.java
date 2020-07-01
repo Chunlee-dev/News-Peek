@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chunleedev.newspeek.R;
 import com.chunleedev.newspeek.databinding.ItemAdapterViewBinding;
-import com.chunleedev.newspeek.parceables.Article;
-import com.chunleedev.newspeek.parceables.Source;
+import com.chunleedev.newspeek.model.ArticleModel;
 
 import java.util.ArrayList;
 
@@ -22,10 +21,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ArticleHolder>
 
     private final Context mContext;
     private final LayoutInflater mInflater;
-    private ArrayList<Article> articleList;
+    private ArrayList<ArticleModel> articleList;
     //private ArrayList<Source> sourceList;
 
-    public ItemAdapter(Context context, ArrayList<Article> articleList) {
+    public ItemAdapter(Context context, ArrayList<ArticleModel> articleList) {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
         this.articleList = articleList;
@@ -41,7 +40,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ArticleHolder>
 
     @Override
     public void onBindViewHolder(@NonNull ArticleHolder holder, int position) {
-        Article model = articleList.get(position);
+        ArticleModel model = articleList.get(position);
         if (model != null) {
             holder.bind(model);
         }
@@ -82,18 +81,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ArticleHolder>
 
         }
 
-        void bind(Article currentModel) {
-            name.setText(currentModel.getAuthor());
+        void bind(ArticleModel currentModel) {
+            name.setText(currentModel.getName());
             author.setText(currentModel.getAuthor());
-            date.setText(currentModel.getPublishedAt());
+            date.setText(currentModel.getDate());
             title.setText(currentModel.getTitle());
-            contentPeek.setText(currentModel.getDescription());
+            contentPeek.setText(currentModel.getContentPeek());
             Glide
                     .with(mContext)
-                    .load(currentModel.getUrlToImage())
+                    .load(currentModel.getImageUrl())
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .centerCrop()
-                    .placeholder(R.color.toolbar_trans_color)
+                    .placeholder(R.color.toolbar_color)
                     .into(image);
         }
 

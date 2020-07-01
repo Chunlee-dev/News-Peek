@@ -13,8 +13,9 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/item_title_style"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="8dp"
+        android:paddingVertical="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,15 +24,17 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tint="@color/toolbar_color"
             android:contentDescription="@string/logo"
-            android:src="@drawable/peekly_logo" />
+            android:src="@drawable/ic_twotone_bubble_chart_24" />
 
         <TextView
             android:id="@+id/article_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:text="@string/app_name"
+            android:textSize="16sp"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:textStyle="bold" />
 
@@ -43,7 +46,8 @@
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
-        android:padding="12dp"
+        android:padding="14dp"
+        android:tint="@android:color/darker_gray"
         android:rotation="90"
         android:src="@drawable/menu_options"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +72,7 @@
             <ImageView
                 android:contentDescription="@string/action_image"
                 android:id="@+id/image"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +83,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,6 +95,7 @@
                     android:layout_height="wrap_content"
                     android:maxLines="2"
                     android:ellipsize="end"
+                    android:textSize="20sp"
                     android:fontFamily="@font/montserrat"
                     android:text="@string/dummy_article_title"
                     android:textAppearance="@android:style/TextAppearance.Material.Large"
@@ -103,8 +108,9 @@
                     android:id="@+id/article_peek"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:maxLines="3"
+                    android:textSize="16sp"
                     android:ellipsize="end"
                     android:text="@string/dummy_article_title"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
@@ -124,8 +130,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/article_peek">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:padding="2dp"
                         android:contentDescription="@string/author"
                         app:srcCompat="@drawable/ic_twotone_copyright_24" />
 
